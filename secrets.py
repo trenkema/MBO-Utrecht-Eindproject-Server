@@ -1,0 +1,2 @@
+SSID = "HokusPokus"
+PASSWORD = "TomRenkema"
