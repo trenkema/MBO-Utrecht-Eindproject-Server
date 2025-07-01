@@ -19,7 +19,10 @@ talk_led = RGBLed([board.GP21, board.GP20, board.GP19])
 talk_led.set_color((0, 0, 0))
 
 buttons = [Button(getattr(board, f"GP{i}")) for i in range(8, -1, -1)]
-buttons_rgb = []  # Fill with actual RGBLed instances in your real setup
+buttons_rgb = [
+    RGBLed([all_channels[i*3 + 2], all_channels[i*3 + 0], all_channels[i*3 + 1]])
+    for i in range(9)
+]
 
 correct_order = [5, 7, 8, 1, 2, 6, 3, 0, 4]
 pressed_order = []
