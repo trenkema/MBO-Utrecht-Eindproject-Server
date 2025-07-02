@@ -3,6 +3,7 @@ import socketpool
 import time
 import select
 import microcontroller
+import secrets
 
 class Server:
     def __init__(self, port=1235):
@@ -18,7 +19,7 @@ class Server:
         self.conn = None          # The client connection socket (once accepted)
         self.buffer = bytearray(1024)  # Buffer for receiving incoming data
 
-    def start_ap(self, ssid="myAP", password="password123"):
+    def start_ap(self):
         """
         Start the device as a Wi-Fi Access Point (AP) with given SSID and password.
         
@@ -26,7 +27,7 @@ class Server:
             ssid (str): Wi-Fi SSID for the AP.
             password (str): Password for the AP.
         """
-        wifi.radio.start_ap(ssid=ssid, password=password)
+        wifi.radio.start_ap(secrets.SSID, secrets.PASSWORD)
         print("AP started. IP address:", wifi.radio.ipv4_address)
         time.sleep(3)  # Pause to allow AP to stabilize before accepting connections
 

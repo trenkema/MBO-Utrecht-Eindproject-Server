@@ -1,2 +1,2 @@
-SSID = "HokusPokus"
-PASSWORD = "TomRenkema"
+SSID = "myAP"
+PASSWORD = "password123"

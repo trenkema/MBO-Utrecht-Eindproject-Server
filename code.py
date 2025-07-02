@@ -7,6 +7,8 @@ from button_led import Button, RGBLed
 from led_ring import CountdownTimer
 from adafruit_pca9685 import PCA9685
 
+time.sleep(3)  # Allow time for board to initialize
+
 # Constants for button press timing and game settings
 TALK_PRESS_TIME_WINDOW = 3.0  # Time window to count multiple talk button presses
 RESET_PRESS_THRESHOLD = 8     # Number of presses required to reset game during play
