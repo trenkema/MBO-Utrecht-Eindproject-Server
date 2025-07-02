@@ -4,8 +4,8 @@ import neopixel
 import math
 
 # Number of LEDs in the NeoPixel ring
-NUM_PIXELS = 12  # Adjust if using a different LED count
-PIXEL_PIN = board.GP28  # GPIO pin connected to NeoPixel data line
+NUM_PIXELS = 16  # Adjust if using a different LED count
+PIXEL_PIN = board.GP9  # GPIO pin connected to NeoPixel data line
 BRIGHTNESS = 0.1  # Overall brightness of the LED ring (0.0 to 1.0)
 
 # Initialize the NeoPixel strip with the specified pin, number of LEDs, and settings
