@@ -27,7 +27,7 @@ class Server:
             ssid (str): Wi-Fi SSID for the AP.
             password (str): Password for the AP.
         """
-        wifi.radio.start_ap(secrets.SSID, secrets.PASSWORD)
+        wifi.radio.start_ap("myAP", "password123")
         print("AP started. IP address:", wifi.radio.ipv4_address)
         time.sleep(3)  # Pause to allow AP to stabilize before accepting connections
 

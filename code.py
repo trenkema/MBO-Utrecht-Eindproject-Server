@@ -7,7 +7,7 @@ from button_led import Button, RGBLed
 from led_ring import CountdownTimer
 from adafruit_pca9685 import PCA9685
 
-time.sleep(3)  # Allow time for board to initialize
+#time.sleep(3)  # Allow time for board to initialize
 
 # Constants for button press timing and game settings
 TALK_PRESS_TIME_WINDOW = 3.0  # Time window to count multiple talk button presses
@@ -220,6 +220,16 @@ while True:
             elif not game_started and talk_press_count >= START_PRESS_THRESHOLD:
                 time.sleep(0.5)
                 start_game()
+
+    if talk_button_pressed:
+        # Local user is talking: green if other not talking, else red
+        talk_led.set_color((0, 65535, 0) if not other_person_talking else (65535, 0, 0))
+    elif other_person_talking:
+        # Other person is talking: red LED
+        talk_led.set_color((65535, 0, 0))
+    else:
+        # Nobody talking: turn off LED
+        talk_led.set_color((0, 0, 0))
 
     # If game is running, check physical buttons for presses
     if game_started:
